@@ -50,7 +50,6 @@ export const TopCommons = () => {
 
 const ColumnContainer = styled.div({
     display: 'flex',
-    width: '100vw',
-    height: '100%',
+    //   flexDirection: 'column',
     margins: '0px',
 });

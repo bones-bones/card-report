@@ -4,7 +4,7 @@ export const Column = styled.div(
     ({ columnColor }: { columnColor: 'W' | 'U' | 'B' | 'R' | 'G' | '' }) => {
         return {
             backgroundColor: getColor(columnColor),
-            width: '100%',
+            width: 100 / 6 + 'vw',
             height: '100%',
         };
     }
@@ -13,16 +13,16 @@ export const Column = styled.div(
 const getColor = (color: 'W' | 'U' | 'B' | 'R' | 'G' | '') => {
     switch (color) {
         case 'W':
-            return 'WHITE';
+            return 'rgb(248, 231, 185)'; //rgb(249,250,244)
         case 'U':
-            return 'BLUE';
+            return 'rgb(179, 206, 234)'; //rgb(14, 104, 171)
         case 'B':
-            return 'BLACK';
+            return 'rgb(166, 159, 157)'; //rgb(21,11,0)
         case 'R':
-            return 'RED';
+            return 'rgb(235, 159, 130)'; //rgb(211, 32, 42)
         case 'G':
-            return 'GREEN';
+            return 'rgb(196, 211, 202)'; //rgb(0, 115, 62)
         case '':
-            return 'BROWN';
+            return '#e8dcd0'; //7a5e52
     }
 };

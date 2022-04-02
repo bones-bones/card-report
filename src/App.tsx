@@ -24,7 +24,7 @@ function App() {
             ) : (
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<TopCommons />} />
+                        <Route path="/card-report" element={<TopCommons />} />
                     </Routes>
                 </BrowserRouter>
             )}
