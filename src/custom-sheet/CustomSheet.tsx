@@ -1,10 +1,8 @@
 import styled from '@emotion/styled';
 
 import React, { useState } from 'react';
-import { BondsFrame } from '../bonds';
-import { InventoryFrame } from '../inventory';
-import { Notifications } from '../notifications';
-import { SkillsFrame } from '../skills';
+import { InventoryFrame } from '../cards';
+
 import { DerivedFrame } from './DerivedFrame';
 import { Placard } from './Placard';
 import { StatFrame } from './StatFrame';
@@ -17,7 +15,7 @@ export const CustomSheet = () => {
     return (
         <Background>
             <Placard />
-            <Notifications />
+
             <Panel>
                 <Tabs>
                     {tabs.map((entry, i) => (

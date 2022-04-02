@@ -1,19 +1,17 @@
 {
-  "name": "Card Report",
+  "name": "card-report",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^10.0.27",
     "@reduxjs/toolkit": "^1.6.2",
-    "cra-template-typescript": "1.1.2",
     "emotion": "^10.0.17",
     "eslint-config-prettier": "^8.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
-    "react-router-dom": "6",
-    "react-scripts": "^3.3.1"
+    "react-router-dom": "6"
   },
   "devDependencies": {
     "@babel/plugin-syntax-class-properties": "^7.12.13",
