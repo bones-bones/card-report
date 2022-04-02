@@ -4,3 +4,4 @@ Goal: dashboard to view cards
 
 `yarn`
 `yarn start`
+Runs at http://localhost:3000/card-report
