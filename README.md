@@ -1,31 +1,6 @@
-CHA
-Communication
-Psych
-Human Insight
+Goal: dashboard to view cards
 
-CON
-Survivial
-Navigation
+## getting started
 
-STR
-Melee
-Athletics
-
-DEX
-Drive
-Ranged
-Dodge
-Aim
-
-INT
-Occult
-Medicine
-Crafting
-Business
-Anthropology
-Science
-Disguise
-
-POW
-Unnatural
-Stealth
+`yarn`
+`yarn start`

@@ -7,7 +7,7 @@ export const { actions, reducer } = createSlice({
     name: 'cards',
     initialState,
     reducers: {
-        loadInitial: (_state, { payload }: PayloadAction<CardEntry[]>) => {
+        loadCards: (_state, { payload }: PayloadAction<CardEntry[]>) => {
             return payload;
         },
     },

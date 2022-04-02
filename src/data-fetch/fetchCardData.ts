@@ -1,6 +1,6 @@
-const USE_LOCAL_DATA = true;
 import { sampleData } from './sampleData';
 import { CardEntry } from './types';
+const USE_LOCAL_DATA = true;
 export const fetchCardData = async (): Promise<CardEntry[]> => {
     if (USE_LOCAL_DATA) {
         return sampleData;
