@@ -6,6 +6,7 @@ import { selectCards } from '../cards';
 import { Card } from '../components';
 import { CardEntry } from '../data-fetch';
 import { Column } from './Column';
+import { FilterBar } from './FilterBar';
 
 export const TopCommons = () => {
     const cards = useSelector(selectCards);
@@ -25,26 +26,29 @@ export const TopCommons = () => {
     }, {} as Record<CardEntry['color'], CardEntry[]>);
 
     return (
-        <ColumnContainer>
-            {(
-                ['W', 'U', 'B', 'R', 'G', ''] as (
-                    | 'W'
-                    | 'U'
-                    | 'B'
-                    | 'R'
-                    | 'G'
-                    | ''
-                )[]
-            ).map((entry) => {
-                return (
-                    <Column key={entry} columnColor={entry}>
-                        {reducedCommons[entry].slice(0, 5).map((card) => (
-                            <Card key={card.name} card={card} />
-                        ))}
-                    </Column>
-                );
-            })}
-        </ColumnContainer>
+        <>
+            <FilterBar />
+            <ColumnContainer>
+                {(
+                    ['W', 'U', 'B', 'R', 'G', ''] as (
+                        | 'W'
+                        | 'U'
+                        | 'B'
+                        | 'R'
+                        | 'G'
+                        | ''
+                    )[]
+                ).map((entry) => {
+                    return (
+                        <Column key={entry} columnColor={entry}>
+                            {reducedCommons[entry].slice(0, 5).map((card) => (
+                                <Card key={card.name} card={card} />
+                            ))}
+                        </Column>
+                    );
+                })}
+            </ColumnContainer>
+        </>
     );
 };
 

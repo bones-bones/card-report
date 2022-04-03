@@ -1,6 +1,6 @@
 export interface CardEntry {
-    seen_count: number; //291821,
-    avg_seen: number; //7.24705898478862,
+    seen_count: number; //291821|
+    avg_seen: number; //7.24705898478862|
     pick_count: number; //29008;
     avg_pick: number; //10.78992002206288;
     game_count: number; //41740;
@@ -18,7 +18,6 @@ export interface CardEntry {
     drawn_improvement_win_rate: number; //-0.017581361191953193;
     name: string; //'Ancestral Katana';
     color:
-        | 'WUBRG'
         | 'W'
         | 'U'
         | 'B'
@@ -34,9 +33,22 @@ export interface CardEntry {
         | 'BR'
         | 'BG'
         | 'RG'
-        | 'UBG'
+        | 'WUB'
         | 'WUR'
+        | 'WUG'
         | 'WBR'
+        | 'WBG'
+        | 'WRG'
+        | 'UBR'
+        | 'UBG'
+        | 'URG'
+        | 'BRG'
+        | 'WUBR'
+        | 'WUBG'
+        | 'WURG'
+        | 'WBRG'
+        | 'UBRG'
+        | 'WUBRG'
         | ''; //artifact
 
     rarity: 'common' | 'uncommon' | 'rare' | 'mythic' | 'basic';
