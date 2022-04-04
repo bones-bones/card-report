@@ -28,7 +28,9 @@ const FlipCard = styled.div(({ hasBack }: { hasBack: boolean }) => ({
         },
     }),
     transformStyle: 'preserve-3d',
-    height: '200px',
+    height: '220px',
+    display: 'flex',
+    justifyContent: 'center',
     position: 'relative',
 }));
 
@@ -40,15 +42,16 @@ const Container = styled.div({
     height: '300px',
 });
 const Image = styled.img({
-    width: '100%',
     top: '0px',
+    height: '200px',
+
     backfaceVisibility: 'hidden',
     position: 'absolute',
 });
 
 const BackImage = styled.img({
-    width: '100%',
     top: '0px',
+    height: '200px',
     transform: 'rotateY(180deg)',
     backfaceVisibility: 'hidden',
     position: 'absolute',
