@@ -62,6 +62,7 @@ const Name = styled.h3({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     display: 'inline',
+    textAlign: 'center',
 });
 
 const WinRate = styled.span({
