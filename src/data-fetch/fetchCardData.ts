@@ -1,6 +1,6 @@
 import { sampleData } from './sampleData';
 import { CardEntry } from './types';
-const USE_LOCAL_DATA = false;
+const USE_LOCAL_DATA = true;
 export const fetchCardData = async (
     expansion: string
 ): Promise<CardEntry[]> => {
