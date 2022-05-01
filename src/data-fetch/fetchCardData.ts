@@ -1,6 +1,6 @@
 import { sampleData } from './sampleData';
 import { CardEntry } from './types';
-const USE_LOCAL_DATA = true;
+const USE_LOCAL_DATA = false;
 export const fetchCardData = async (
     expansion: string
 ): Promise<CardEntry[]> => {
@@ -8,8 +8,12 @@ export const fetchCardData = async (
         return sampleData;
     }
 
+    const today = new Date();
+    const aWeekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
     const repsonse = await fetch(
-        `https://www.17lands.com/card_ratings/data?expansion=${expansion}&format=PremierDraft&start_date=2021-12-02&end_date=2022-04-02`
+        `https://www.17lands.com/card_ratings/data?expansion=${expansion}&format=PremierDraft&start_date=${
+            aWeekAgo.toISOString().split('T')[0]
+        }&end_date=${today.toISOString().split('T')[0]}`
     );
     const respAsJson = await repsonse.json();
     return respAsJson;

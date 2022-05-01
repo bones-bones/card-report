@@ -6,12 +6,14 @@ import { selectCards } from '../cards';
 import { Card } from '../components';
 import { CardEntry } from '../data-fetch';
 import { Column } from './Column';
-import { FilterBar } from './FilterBar';
+import { FilterBar } from '../filter-bar';
 
 export const TopCommons = () => {
     const cards = useSelector(selectCards);
 
-    const commons = cards.filter(({ rarity }) => rarity === 'common');
+    const commons = cards.filter(
+        ({ rarity }) => rarity === 'common' || rarity === 'uncommon'
+    );
 
     const sortedCommons = commons.sort((card1, card2) => {
         return card2.win_rate - card1.win_rate;
@@ -27,10 +29,6 @@ export const TopCommons = () => {
 
     return (
         <>
-            <span>
-                Powered by data from
-                <a href={'https://www.17lands.com/'}>17Lands</a>
-            </span>
             <FilterBar />
             <ColumnContainer>
                 {(
@@ -45,7 +43,7 @@ export const TopCommons = () => {
                 ).map((entry) => {
                     return (
                         <Column key={entry} columnColor={entry}>
-                            {reducedCommons[entry].slice(0, 5).map((card) => (
+                            {reducedCommons[entry].slice(0, 10).map((card) => (
                                 <Card key={card.name} card={card} />
                             ))}
                         </Column>

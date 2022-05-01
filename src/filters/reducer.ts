@@ -8,7 +8,7 @@ interface PossibleFilters {
 const initialState: {
     possibleFilters?: PossibleFilters;
     appliedSet: string;
-} = { appliedSet: 'NEO' };
+} = { appliedSet: 'SNC' };
 
 export const { actions, reducer } = createSlice({
     name: 'filters',

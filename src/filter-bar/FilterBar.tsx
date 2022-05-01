@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectActiveSet, selectPossibleFilters } from '../filters/selectors';
 import Arrow from '../resources/arrow.svg';
-import { actions } from '../filters/reducer';
 import { filterThunk } from '../filters/filterThunk';
 
 export const FilterBar = () => {

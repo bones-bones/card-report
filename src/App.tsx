@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
 import { actions } from './cards';
 import { selectCards } from './cards/selectors';
 import { fetchCardData } from './data-fetch';
@@ -10,13 +10,21 @@ import { fetchFilters } from './data-fetch/fetchFilters';
 import { actions as filterActions } from './filters/reducer';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
+import { RemovalRankings } from './removal';
+
+const RouteApp = () =>
+    useRoutes([
+        { path: '/', element: <TopCommons /> },
+        { path: '/commonsAndUncommons', element: <TopCommons /> },
+        { path: '/isRemovalBadActually', element: <RemovalRankings /> },
+    ]);
 
 function App() {
     const dispatch = useDispatch();
     const cards = useSelector(selectCards);
 
     useEffect(() => {
-        fetchCardData('NEO').then((resp) => {
+        fetchCardData('SNC').then((resp) => {
             dispatch(actions.loadCards(resp));
         });
         fetchFilters().then((resp) => {
@@ -31,11 +39,15 @@ function App() {
                     <LogoImage src={Logo} />
                 </LogoContainer>
             ) : (
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/card-report" element={<TopCommons />} />
-                    </Routes>
-                </BrowserRouter>
+                <>
+                    <span>
+                        Powered by data from
+                        <a href={'https://www.17lands.com/'}>17Lands</a>
+                    </span>
+                    <BrowserRouter basename="card-report">
+                        <RouteApp />
+                    </BrowserRouter>
+                </>
             )}
         </>
     );

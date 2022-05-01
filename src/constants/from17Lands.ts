@@ -1,0 +1,1 @@
+export const AVERAGE_17_LANDS_WIN_RATE = 55;
