@@ -29,6 +29,16 @@ export const TopCommons = () => {
 
     return (
         <>
+            <span>
+                Powered by data from
+                <a href={'https://www.17lands.com/'}>17Lands</a>
+            </span>{' '}
+            -{' '}
+            <span>
+                <a href={'https://github.com/bones-bones/card-report'}>
+                    code is here
+                </a>
+            </span>
             <FilterBar />
             <ColumnContainer>
                 {(

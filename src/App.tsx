@@ -11,12 +11,14 @@ import { actions as filterActions } from './filters/reducer';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import { RemovalRankings } from './removal';
+import { RoundRobin } from './round-robin';
 
 const RouteApp = () =>
     useRoutes([
         { path: '/', element: <TopCommons /> },
         { path: '/commonsAndUncommons', element: <TopCommons /> },
         { path: '/isRemovalBadActually', element: <RemovalRankings /> },
+        { path: '/roundRobin', element: <RoundRobin /> },
     ]);
 
 function App() {
@@ -40,10 +42,6 @@ function App() {
                 </LogoContainer>
             ) : (
                 <>
-                    <span>
-                        Powered by data from
-                        <a href={'https://www.17lands.com/'}>17Lands</a>
-                    </span>
                     <BrowserRouter basename="card-report">
                         <RouteApp />
                     </BrowserRouter>

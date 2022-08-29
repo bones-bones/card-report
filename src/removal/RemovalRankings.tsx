@@ -7,19 +7,38 @@ import { Card } from '../components';
 import { AVERAGE_17_LANDS_WIN_RATE } from '../constants';
 import { CardEntry } from '../data-fetch';
 import { FilterBar } from '../filter-bar';
+import { getAverageOfColor } from './getAverageOfColor';
 import { listOfRemoval } from './listOfRemoval';
 
 export const RemovalRankings = () => {
     const cards = useSelector(selectCards);
+
+    const nonRemoval = cards.filter(
+        (entry) => !listOfRemoval.includes(entry.name)
+    );
+
     const [activeCard, setActiveCard] = useState<CardEntry | null>(null);
     const filteredCards = cards.filter((entry) =>
         listOfRemoval.includes(entry.name)
     );
-    const sortedCards = filteredCards.sort((card1, card2) => {
-        return card2.win_rate - card1.win_rate;
-    });
+
+    const sortedCards = filteredCards
+        .concat(getAverageOfColor(nonRemoval))
+        .sort((card1, card2) => {
+            return card2.win_rate - card1.win_rate;
+        });
     return (
         <>
+            <span>
+                Powered by data from
+                <a href={'https://www.17lands.com/'}>17Lands</a>
+            </span>{' '}
+            -{' '}
+            <span>
+                <a href={'https://github.com/bones-bones/card-report'}>
+                    code is here
+                </a>
+            </span>
             <FilterBar />
             <Container>
                 <RowContainer>
