@@ -34,7 +34,11 @@ export const sampleFilters = {
         'WUBRG',
     ],
     expansions: [
+        'DMU',
+        'HBG',
         'SNC',
+        'NEO',
+        'DBL',
         'VOW',
         'DBL',
         'MID',

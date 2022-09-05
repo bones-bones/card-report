@@ -9,33 +9,17 @@ export const Ranking = () => {
         <EventContext.Consumer>
             {({ matches, players }) => {
                 const scoredPlayers = players.reduce((prev, entry) => {
-                    return { ...prev, [entry]: 1000 };
+                    return { ...prev, [entry]: 0 };
                 }, {} as { [key: string]: number });
 
                 matches.forEach((entry) => {
-                    const totalGames =
-                        entry.playerMatches[0].win +
-                        entry.playerMatches[1].win +
-                        entry.tie;
-
                     const p1Name = entry.playerMatches[0].playerName;
                     const p2Name = entry.playerMatches[1].playerName;
-                    const p1Elo = scoredPlayers[p1Name];
-                    const p2Elo = scoredPlayers[p2Name];
 
-                    const p1Up = (p2Elo + 40) * entry.playerMatches[0].win;
-                    const p1Down = (p2Elo - 40) * entry.playerMatches[1].win;
-                    const p1Tie = p2Elo * entry.tie;
-
-                    const p2Up = (p1Elo + 40) * entry.playerMatches[1].win;
-                    const p2Down = (p1Elo - 40) * entry.playerMatches[0].win;
-                    const p2Tie = p1Elo * entry.tie;
-
-                    scoredPlayers[p1Name] =
-                        (p1Up + p1Down + p1Tie) / totalGames;
-
-                    scoredPlayers[p2Name] =
-                        (p2Up + p2Down + p2Tie) / totalGames;
+                    scoredPlayers[p1Name] +=
+                        entry.playerMatches[0].win * 3 + entry.tie * 1;
+                    scoredPlayers[p2Name] +=
+                        entry.playerMatches[1].win * 3 + entry.tie * 1;
                 });
 
                 const sortedPlayers = Object.entries(scoredPlayers).map(
@@ -61,7 +45,7 @@ export const Ranking = () => {
                                         <h2>Player</h2>
                                     </th>
                                     <th>
-                                        <h2>Elo</h2>
+                                        <h2>Score</h2>
                                     </th>
                                 </TableRow>
                             </thead>
@@ -91,3 +75,28 @@ export const Ranking = () => {
         </EventContext.Consumer>
     );
 };
+
+// Buggy ELO code
+// const totalGames =
+// entry.playerMatches[0].win +
+// entry.playerMatches[1].win +
+// entry.tie;
+
+// const p1Name = entry.playerMatches[0].playerName;
+// const p2Name = entry.playerMatches[1].playerName;
+// const p1Elo = scoredPlayers[p1Name];
+// const p2Elo = scoredPlayers[p2Name];
+
+// const p1Up = (p2Elo + 40) * entry.playerMatches[0].win;
+// const p1Down = (p2Elo - 40) * entry.playerMatches[1].win;
+// const p1Tie = p2Elo * entry.tie;
+
+// const p2Up = (p1Elo + 40) * entry.playerMatches[1].win;
+// const p2Down = (p1Elo - 40) * entry.playerMatches[0].win;
+// const p2Tie = p1Elo * entry.tie;
+
+// scoredPlayers[p1Name] =
+// (p1Up + p1Down + p1Tie) / totalGames;
+
+// scoredPlayers[p2Name] =
+// (p2Up + p2Down + p2Tie) / totalGames;

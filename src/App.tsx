@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
-import { actions } from './cards';
-import { selectCards } from './cards/selectors';
+import { actions, selectCards } from './cards';
 import { fetchCardData } from './data-fetch';
 import { TopCommons } from './top-commons';
 import Logo from './resources/logo.svg';

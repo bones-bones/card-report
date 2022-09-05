@@ -20,7 +20,6 @@ export const RoundRobin = () => {
                         </Card>
                     </StyledLayoutColumn>
                 </Layout>
-
                 <Container>
                     <Layout>
                         <Layout.Column columns={3}>
@@ -59,4 +58,5 @@ const OuterContainer = styled('div')({
     backgroundRepeat: 'repeat-y',
     backgroundSize: '100%',
     height: 'auto',
+    minHeight: '100vh',
 });
