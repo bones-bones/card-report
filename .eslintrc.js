@@ -3,6 +3,7 @@ module.exports = {
     env: {
         browser: true,
         es6: true,
+        node: true,
     },
     extends: [
         'eslint:recommended',
@@ -32,5 +33,6 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 0,
         'no-cond-assign': 0,
         '@typescript-eslint/explicit-module-boundary-types': 0,
+        '@typescript-eslint/camelcase': 0,
     },
 };

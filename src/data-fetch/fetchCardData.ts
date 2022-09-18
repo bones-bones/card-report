@@ -3,7 +3,7 @@ import { CardEntry } from './types';
 export const fetchCardData = async (
     expansion: string
 ): Promise<CardEntry[]> => {
-    if (process.env.LOCAL_DATA) {
+    if (process.env.LOCAL_DATA==='true') {
         return sampleData;
     }
 
@@ -14,6 +14,9 @@ export const fetchCardData = async (
             '2020-01-01' //  aWeekAgo.toISOString().split('T')[0]
         }&end_date=${today.toISOString().split('T')[0]}`
     );
+
+
+
     const respAsJson = await response.json();
     return respAsJson;
 };
