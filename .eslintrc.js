@@ -3,7 +3,6 @@ module.exports = {
     env: {
         browser: true,
         es6: true,
-        node: true,
     },
     extends: [
         'eslint:recommended',
@@ -22,10 +21,9 @@ module.exports = {
         },
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint'],
+    plugins: ['@typescript-eslint'],
     rules: {
         'prefer-destructuring': ['error', { object: true, array: false }],
-        'import/prefer-default-export': 0,
         'react/prop-types': 0,
         '@typescript-eslint/explicit-function-return-type': 0,
         '@typescript-eslint/no-use-before-define': 0,

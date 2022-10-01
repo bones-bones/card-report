@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { getColor, MTGColor } from '../colors';
+
+import { MTGColor, getColor } from '../colors';
 
 export const Column = styled.div(
     ({ columnColor }: { columnColor: MTGColor }) => {

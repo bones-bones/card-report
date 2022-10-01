@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+
 import { selectCards } from '../cards';
-import { getColor, MTGColor } from '../colors';
+import { MTGColor, getColor } from '../colors';
 import { Card } from '../components';
 import { AVERAGE_17_LANDS_WIN_RATE } from '../constants';
 import { CardEntry } from '../data-fetch';

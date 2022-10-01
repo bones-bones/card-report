@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { EventContext } from './EventContext';
 import { PlayerMatchResult } from './types';
 

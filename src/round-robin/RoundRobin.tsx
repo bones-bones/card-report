@@ -2,12 +2,13 @@ import styled from '@emotion/styled';
 import { Card } from '@workday/canvas-kit-react/card';
 import { Layout } from '@workday/canvas-kit-react/layout';
 import React from 'react';
+
 import { EventShell } from './EventShell';
 import { Matches } from './Matches';
+import bgImage from './Pacifica.webp';
 import { Players } from './Players';
 import { Ranking } from './Ranking';
 import { Title } from './Title';
-import bgImage from './Pacifica.webp';
 
 export const RoundRobin = () => {
     return (

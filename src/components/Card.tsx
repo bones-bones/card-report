@@ -1,11 +1,11 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-
 import React from 'react';
+
 import { CardEntry } from '../data-fetch';
 
 export const Card = ({ card }: { card: CardEntry }) => (
-    <Container>
+    <Container key={card.name}>
         <Name>{card.name}</Name>
         <FlipCard hasBack={card.url_back !== ''}>
             <Image src={card.url} />

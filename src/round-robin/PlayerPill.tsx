@@ -1,7 +1,8 @@
 import { Pill } from '@workday/canvas-kit-preview-react/pill';
-import React from 'react';
-import { EventContext } from './EventContext';
 import { Menu } from '@workday/canvas-kit-react/menu';
+import React from 'react';
+
+import { EventContext } from './EventContext';
 import { getEmojiForString } from './getEmojiForString';
 
 export const PlayerPill: React.FC<{ children: string }> = ({ children }) => {

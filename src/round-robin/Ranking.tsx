@@ -1,7 +1,7 @@
-import { EventContext } from './EventContext';
-import React from 'react';
 import { Table, TableRow } from '@workday/canvas-kit-react/table';
+import React from 'react';
 
+import { EventContext } from './EventContext';
 import { PlayerPill } from './PlayerPill';
 
 export const Ranking = () => {

@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
-
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { loadSetThunk } from '../data-fetch/scryfall/loadSetThunk';
+import { filterThunk } from '../filters/filterThunk';
 import { selectActiveSet, selectPossibleFilters } from '../filters/selectors';
 import Arrow from '../resources/arrow.svg';
-import { filterThunk } from '../filters/filterThunk';
 
 export const FilterBar = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const possibleFilters = useSelector(selectPossibleFilters);
     const activeSet = useSelector(selectActiveSet);
     const dispatch = useDispatch();
@@ -30,8 +31,11 @@ export const FilterBar = () => {
                                 id="setSelect"
                                 value={activeSet}
                                 onChange={({ target: { value } }) => {
-                                    console.log(value);
-                                    dispatch(filterThunk({ expansion: value }));
+                                    location.search = '?set=' + value;
+                                    // dispatch(filterThunk({ expansion: value }));
+                                    // dispatch(
+                                    //     loadSetThunk({ expansion: value })
+                                    // );
                                 }}
                             >
                                 {possibleFilters.expansions.map((entry) => {

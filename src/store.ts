@@ -1,12 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import { reducer as cardsReducer } from './cards';
+import { reducer as scryfallSetReducer } from './data-fetch/scryfall/reducer';
 import { reducer as filterReducer } from './filters/reducer';
 
 export const store = configureStore({
     reducer: combineReducers({
         cards: cardsReducer,
         filters: filterReducer,
+        scryfallSet: scryfallSetReducer,
     }),
 });
 

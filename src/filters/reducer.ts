@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface PossibleFilters {
     expansions: string[];
@@ -8,7 +8,7 @@ interface PossibleFilters {
 const initialState: {
     possibleFilters?: PossibleFilters;
     appliedSet: string;
-} = { appliedSet: 'DMU' };
+} = { appliedSet: /set=(.*)/.exec(location.search)?.[1] || 'DMU' };
 
 export const { actions, reducer } = createSlice({
     name: 'filters',

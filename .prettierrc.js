@@ -4,4 +4,7 @@ module.exports = {
     tabWidth: 4,
     semi: true,
     singleQuote: true,
+    importOrder: ['<THIRD_PARTY_MODULES>', '^[./]'],
+    importOrderSeparation: true,
+    importOrderSortSpecifiers: true,
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { PlayerMatchResult } from './types';
 
 export const EventContext = React.createContext({

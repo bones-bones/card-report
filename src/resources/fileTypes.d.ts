@@ -1,9 +1,9 @@
-declare module "*.svg" {
+declare module '*.svg' {
     const content: any;
     export default content;
-  }
+}
 
-declare module "*.webp" {
+declare module '*.webp' {
     const content: any;
     export default content;
 }

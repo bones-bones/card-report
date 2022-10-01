@@ -1,11 +1,11 @@
-import { EventContext } from './EventContext';
-import React from 'react';
+import { TertiaryButton } from '@workday/canvas-kit-react/button';
 import { Table, TableRow } from '@workday/canvas-kit-react/table';
+import { trashIcon } from '@workday/canvas-system-icons-web';
+import React from 'react';
 
 import { AddMatchModal } from './AddMatchModal';
+import { EventContext } from './EventContext';
 import { PlayerPill } from './PlayerPill';
-import { TertiaryButton } from '@workday/canvas-kit-react/button';
-import { trashIcon } from '@workday/canvas-system-icons-web';
 
 export const Matches = () => {
     return (

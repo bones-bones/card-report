@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
-import React, { useState } from 'react';
-import { Modal } from '@workday/canvas-kit-react/modal';
-import { EventContext } from './EventContext';
+import { Select } from '@workday/canvas-kit-preview-react/select';
 import {
     PrimaryButton,
     TertiaryButton,
 } from '@workday/canvas-kit-react/button';
-import { Select } from '@workday/canvas-kit-preview-react/select';
+import { Modal } from '@workday/canvas-kit-react/modal';
+import React, { useState } from 'react';
+
+import { EventContext } from './EventContext';
 import { getEmojiForString } from './getEmojiForString';
 
 export const AddMatchModal = () => {

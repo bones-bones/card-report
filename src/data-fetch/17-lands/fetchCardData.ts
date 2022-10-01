@@ -1,9 +1,11 @@
 import { sampleData } from './sampleData';
+import { sampleFilters } from './sampleFilters';
 import { CardEntry } from './types';
+
 export const fetchCardData = async (
     expansion: string
 ): Promise<CardEntry[]> => {
-    if (process.env.LOCAL_DATA==='true') {
+    if (process.env.LOCAL_DATA === 'true') {
         return sampleData;
     }
 
@@ -11,11 +13,11 @@ export const fetchCardData = async (
     // const aWeekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
     const response = await fetch(
         `https://www.17lands.com/card_ratings/data?expansion=${expansion}&format=PremierDraft&start_date=${
-            '2020-01-01' //  aWeekAgo.toISOString().split('T')[0]
+            sampleFilters.start_dates[
+                expansion as keyof typeof sampleFilters.start_dates
+            ] //    '2020-01-01' //  aWeekAgo.toISOString().split('T')[0]
         }&end_date=${today.toISOString().split('T')[0]}`
     );
-
-
 
     const respAsJson = await response.json();
     return respAsJson;

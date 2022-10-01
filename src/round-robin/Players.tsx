@@ -1,9 +1,11 @@
-import { EventContext } from './EventContext';
-import React from 'react';
 import styled from '@emotion/styled';
 import { TertiaryButton } from '@workday/canvas-kit-react/button';
-import { PlayerPill } from './PlayerPill';
 import { trashIcon } from '@workday/canvas-system-icons-web';
+import React from 'react';
+
+import { EventContext } from './EventContext';
+import { PlayerPill } from './PlayerPill';
+
 export const Players = () => {
     return (
         <EventContext.Consumer>
